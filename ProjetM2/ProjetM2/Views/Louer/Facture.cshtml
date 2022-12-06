@@ -1,0 +1,37 @@
+﻿@model IEnumerable<ProjetM2.Models.CLIENT>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Facture</title>
+</head>
+<body>
+   
+    <table class="table">
+       
+    
+    @foreach (var item in Model) {
+        <div>
+            <h2> Facture </h2>
+            <p>
+                Bonjour  @Html.DisplayFor(modelItem => item.NOM) , Vous avez louée @Html.DisplayFor(modelItem => item.LISTLOUEE) à   @Html.DisplayFor(modelItem => item.TIMELOUEE)
+            </p>
+          
+            <p> Vous pouvez rendre le DVD dans 10 jours. </p>
+            <p>
+              Merci de vorte commande.
+            </p>
+            
+           
+        </div>
+    }
+    
+    </table>
+</body>
+</html>

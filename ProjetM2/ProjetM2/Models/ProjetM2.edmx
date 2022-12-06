@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="Models.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="IDOBGET" />
+          </Key>
+          <Property Name="IDOBGET" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOM" Type="nvarchar" MaxLength="50" />
+          <Property Name="MDP" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="IDOBGET" />
+          </Key>
+          <Property Name="IDOBGET" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOM" Type="nvarchar" MaxLength="50" />
+          <Property Name="USERNAME" Type="nvarchar" MaxLength="50" />
+          <Property Name="MDP" Type="nvarchar" MaxLength="50" />
+          <Property Name="LISTLOUEE" Type="nvarchar" MaxLength="100" />
+          <Property Name="TIMELOUEE" Type="date" />
+          <Property Name="TIMERENDU" Type="date" />
+        </EntityType>
+        <EntityType Name="FILM">
+          <Key>
+            <PropertyRef Name="IDOBGET" />
+          </Key>
+          <Property Name="IDOBGET" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NAMEFILM" Type="nvarchar" MaxLength="50" />
+          <Property Name="DIRECTOR" Type="nvarchar" MaxLength="50" />
+          <Property Name="DATESORTIE" Type="date" />
+          <Property Name="CATEGORIE" Type="nvarchar" MaxLength="50" />
+          <Property Name="ENSTOCK" Type="bit" />
+          <Property Name="LIST" Type="int" />
+          <Property Name="NBPRET" Type="int" />
+          <Property Name="PHOTO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="ModelsStoreContainer">
+          <EntitySet Name="ADMIN" EntityType="Self.ADMIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FILM" EntityType="Self.FILM" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ADMIN">
+          <Key>
+            <PropertyRef Name="IDOBGET" />
+          </Key>
+          <Property Name="IDOBGET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MDP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="CLIENT">
+          <Key>
+            <PropertyRef Name="IDOBGET" />
+          </Key>
+          <Property Name="IDOBGET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MDP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LISTLOUEE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TIMELOUEE" Type="DateTime" Precision="0" />
+          <Property Name="TIMERENDU" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="FILM">
+          <Key>
+            <PropertyRef Name="IDOBGET" />
+          </Key>
+          <Property Name="IDOBGET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NAMEFILM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DIRECTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DATESORTIE" Type="DateTime" Precision="0" />
+          <Property Name="CATEGORIE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ENSTOCK" Type="Boolean" />
+          <Property Name="LIST" Type="Int32" />
+          <Property Name="NBPRET" Type="Int32" />
+          <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="ProjetM2Entities1" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ADMIN" EntityType="Self.ADMIN" />
+          <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+          <EntitySet Name="FILM" EntityType="Self.FILM" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="ProjetM2Entities1">
+          <EntitySetMapping Name="ADMIN">
+            <EntityTypeMapping TypeName="Models.ADMIN">
+              <MappingFragment StoreEntitySet="ADMIN">
+                <ScalarProperty Name="IDOBGET" ColumnName="IDOBGET" />
+                <ScalarProperty Name="NOM" ColumnName="NOM" />
+                <ScalarProperty Name="MDP" ColumnName="MDP" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="CLIENT">
+            <EntityTypeMapping TypeName="Models.CLIENT">
+              <MappingFragment StoreEntitySet="CLIENT">
+                <ScalarProperty Name="IDOBGET" ColumnName="IDOBGET" />
+                <ScalarProperty Name="NOM" ColumnName="NOM" />
+                <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+                <ScalarProperty Name="MDP" ColumnName="MDP" />
+                <ScalarProperty Name="LISTLOUEE" ColumnName="LISTLOUEE" />
+                <ScalarProperty Name="TIMELOUEE" ColumnName="TIMELOUEE" />
+                <ScalarProperty Name="TIMERENDU" ColumnName="TIMERENDU" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FILM">
+            <EntityTypeMapping TypeName="Models.FILM">
+              <MappingFragment StoreEntitySet="FILM">
+                <ScalarProperty Name="IDOBGET" ColumnName="IDOBGET" />
+                <ScalarProperty Name="NAMEFILM" ColumnName="NAMEFILM" />
+                <ScalarProperty Name="DIRECTOR" ColumnName="DIRECTOR" />
+                <ScalarProperty Name="DATESORTIE" ColumnName="DATESORTIE" />
+                <ScalarProperty Name="CATEGORIE" ColumnName="CATEGORIE" />
+                <ScalarProperty Name="ENSTOCK" ColumnName="ENSTOCK" />
+                <ScalarProperty Name="LIST" ColumnName="LIST" />
+                <ScalarProperty Name="NBPRET" ColumnName="NBPRET" />
+                <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

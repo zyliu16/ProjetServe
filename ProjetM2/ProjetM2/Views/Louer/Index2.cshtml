@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ProjetM2.Models.FILM>
+
+@{
+    ViewBag.Title = "Index";
+
+}
+
+@using (Html.BeginForm("Search", "Louer", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.Label("keyword", "Search : ", new { @class = "control-label" })
+    @Html.TextBox("keyword", null, new { @class = "form-control" })
+    @Html.Label("done", "film name", new { @class = "control-label" })
+    @Html.CheckBox("done")
+    @Html.Label("done1", "director", new { @class = "control-label" })
+    @Html.CheckBox("done1")
+    @Html.Label("done2", "categorie", new { @class = "control-label" })
+    @Html.CheckBox("done2")
+    <input type="submit" value="SUMBIT" class="btn btn-info" />
+}
+
+<p>
+    @Html.ActionLink("Rendre film", "Rendre")
+</p>
+@Html.ActionLink("Ma Facture", "Facture")
+
+
+
+<h2>ALL VIDEO</h2>
+<a href="/Client/Login">Déconnexion</a>
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDOBGET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NAMEFILM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DIRECTOR)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DATESORTIE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.CATEGORIE)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ENSTOCK)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LIST)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NBPRET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PHOTO)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.IDOBGET)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NAMEFILM)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIRECTOR)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATESORTIE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CATEGORIE)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ENSTOCK)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LIST)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NBPRET)
+            </td>
+            <td>
+                <img src="@Html.DisplayFor(modelItem => item.PHOTO)" alt="Alternate Text" />
+            </td>
+            <td>
+                @Html.ActionLink("Louer", "Edit", new { id = item.IDOBGET })
+
+            </td>
+        </tr>
+    }
+
+</table>
