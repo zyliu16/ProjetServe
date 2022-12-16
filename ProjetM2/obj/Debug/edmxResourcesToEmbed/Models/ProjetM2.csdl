@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Models" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ADMIN">
+    <Key>
+      <PropertyRef Name="IDOBGET" />
+    </Key>
+    <Property Name="IDOBGET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MDP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CLIENT">
+    <Key>
+      <PropertyRef Name="IDOBGET" />
+    </Key>
+    <Property Name="IDOBGET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NOM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="USERNAME" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="MDP" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LISTLOUEE" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TIMELOUEE" Type="DateTime" Precision="0" />
+    <Property Name="TIMERENDU" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="FILM">
+    <Key>
+      <PropertyRef Name="IDOBGET" />
+    </Key>
+    <Property Name="IDOBGET" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NAMEFILM" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DIRECTOR" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DATESORTIE" Type="DateTime" Precision="0" />
+    <Property Name="CATEGORIE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ENSTOCK" Type="Boolean" />
+    <Property Name="LIST" Type="Int32" />
+    <Property Name="NBPRET" Type="Int32" />
+    <Property Name="PHOTO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="ProjetM2Entities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ADMIN" EntityType="Self.ADMIN" />
+    <EntitySet Name="CLIENT" EntityType="Self.CLIENT" />
+    <EntitySet Name="FILM" EntityType="Self.FILM" />
+  </EntityContainer>
+</Schema>

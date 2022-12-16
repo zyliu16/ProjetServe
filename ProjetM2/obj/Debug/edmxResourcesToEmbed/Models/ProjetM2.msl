@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelsStoreContainer" CdmEntityContainer="ProjetM2Entities1">
+    <EntitySetMapping Name="ADMIN">
+      <EntityTypeMapping TypeName="Models.ADMIN">
+        <MappingFragment StoreEntitySet="ADMIN">
+          <ScalarProperty Name="IDOBGET" ColumnName="IDOBGET" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="MDP" ColumnName="MDP" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CLIENT">
+      <EntityTypeMapping TypeName="Models.CLIENT">
+        <MappingFragment StoreEntitySet="CLIENT">
+          <ScalarProperty Name="IDOBGET" ColumnName="IDOBGET" />
+          <ScalarProperty Name="NOM" ColumnName="NOM" />
+          <ScalarProperty Name="USERNAME" ColumnName="USERNAME" />
+          <ScalarProperty Name="MDP" ColumnName="MDP" />
+          <ScalarProperty Name="LISTLOUEE" ColumnName="LISTLOUEE" />
+          <ScalarProperty Name="TIMELOUEE" ColumnName="TIMELOUEE" />
+          <ScalarProperty Name="TIMERENDU" ColumnName="TIMERENDU" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FILM">
+      <EntityTypeMapping TypeName="Models.FILM">
+        <MappingFragment StoreEntitySet="FILM">
+          <ScalarProperty Name="IDOBGET" ColumnName="IDOBGET" />
+          <ScalarProperty Name="NAMEFILM" ColumnName="NAMEFILM" />
+          <ScalarProperty Name="DIRECTOR" ColumnName="DIRECTOR" />
+          <ScalarProperty Name="DATESORTIE" ColumnName="DATESORTIE" />
+          <ScalarProperty Name="CATEGORIE" ColumnName="CATEGORIE" />
+          <ScalarProperty Name="ENSTOCK" ColumnName="ENSTOCK" />
+          <ScalarProperty Name="LIST" ColumnName="LIST" />
+          <ScalarProperty Name="NBPRET" ColumnName="NBPRET" />
+          <ScalarProperty Name="PHOTO" ColumnName="PHOTO" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

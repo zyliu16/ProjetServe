@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ProjetM2.Models.FILM>
+
+@{
+    Layout = null;
+
+}
+@using (Html.BeginForm("Search", "Louer", FormMethod.Get, new { @class = "form-inline" }))
+{
+    @Html.Label("keyword", "Search : ", new { @class = "control-label" })
+    @Html.TextBox("keyword", null, new { @class = "form-control" })
+    @Html.Label("done", "film name", new { @class = "control-label" })
+    @Html.CheckBox("done")
+    @Html.Label("done1", "director", new { @class = "control-label" })
+    @Html.CheckBox("done1")
+    @Html.Label("done2", "categorie", new { @class = "control-label" })
+    @Html.CheckBox("done2")
+    <input type="submit" value="SUMBIT" class="btn btn-info" />
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <a href="/Film/Create">Creér une film</a>
+    <a href="/Home/Index">Clients infos</a>
+    <a href="/Client/Login">Déconnexion</a>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.IDOBGET)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NAMEFILM)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DIRECTOR)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATESORTIE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CATEGORIE)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ENSTOCK)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LIST)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NBPRET)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PHOTO)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IDOBGET)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NAMEFILM)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DIRECTOR)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DATESORTIE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.CATEGORIE)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ENSTOCK)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.LIST)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NBPRET)
+                </td>
+                <td>
+                   
+                    <img style="width:50px;height:50px" src="@Html.DisplayFor(modelItem => item.PHOTO)" alt="" />
+
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IDOBGET }) |
+                    @Html.ActionLink("Add photo", "Photo", new { id = item.IDOBGET }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IDOBGET })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

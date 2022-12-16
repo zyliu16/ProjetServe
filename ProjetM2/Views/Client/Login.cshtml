@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body>
+    <div> 
+        <form method="post">
+            <p>
+                <label>User Name : <input type="text" name="USERNAME" /></label>
+            </p>
+            <p>
+                <label>Password : <input type="text" name="MDP" /></label>
+            </p>
+            <p>
+                <span>@ViewBag.err</span>
+            </p>
+            <p>
+                <label><input type="submit" value="Login" /></label>
+            </p>
+            <a href="/Client/SignUP">sign up</a>
+            <a href="/Client/LoginAdmin">Admin</a>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+﻿@model IEnumerable<ProjetM2.Models.CLIENT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.IDOBGET)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NOM)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.USERNAME)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.MDP)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LISTLOUEE)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.TIMELOUEE)
+        </th>
+         <th>
+            @Html.DisplayNameFor(model => model.TIMERENDU)
+        </th>
+        
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.IDOBGET)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NOM)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.USERNAME)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.MDP)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LISTLOUEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIMELOUEE)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TIMERENDU)
+        </td>
+
+    </tr>
+}
+
+</table>
